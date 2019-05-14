@@ -18,6 +18,7 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/hover.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -41,10 +42,13 @@
               <span class="counter">140</span>
             </form>
           </section>
-        <section id="tweet-container">
+        <section class="tweet-container">
           <article class="tweet">
-            <header><p>Tweet Header</p></header>
-            <footer><p>Tweet Footer</p></footer>
+            <header>
+              <img id="tweet-avatar" src=/images/avatar.png></img>
+              <p class="user-name">Tweet Header</p>
+            </header>
+            <footer><p id="tweet-date">4 Days Ago</p></footer>
           </article>
         </section>
     </main>
