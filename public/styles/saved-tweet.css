@@ -1,0 +1,15 @@
+article.tweet header {
+    background-color: rgba(225, 227, 228, 0.973);
+    height: 3em;
+}
+
+section#tweet-container {
+    border: black solid 1px;
+    border-radius: 10px;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+p {
+    margin: 0px;
+}
