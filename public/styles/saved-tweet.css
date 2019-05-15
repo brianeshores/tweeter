@@ -43,3 +43,11 @@ footer p#tweet-date {
     height: 3em;
     width: 3em;
 }
+
+img#heart {
+    height: 1em;
+    width: 1em;
+    float: right;
+    /* padding-right: 2%;
+    padding-top: 2%; */
+}
