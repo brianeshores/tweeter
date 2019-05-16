@@ -44,6 +44,7 @@ body {
   .new-tweet {
     opacity: .75;
     border: black solid 1px;
+    display: none;
   }
 
   .new-tweet:hover {
