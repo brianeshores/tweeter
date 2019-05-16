@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  color: #244751;
+  color: #244a51;
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
   display: flex;
@@ -28,10 +28,27 @@ body {
   flex-direction: column;
   justify-items: center;
   width: 450px;
-  padding-top: 140px;
+  padding-top: 4em;
   background-color: white;
+  margin-top:1em;
   }
 
+  #error-message {
+    background-color: white;
+    text-align: center;
+  }
+
+  .new-tweet {
+    opacity: .75;
+    border: black solid 1px;
+  }
+
+  .new-tweet:hover {
+    opacity: 1;
+    border: black solid 2px;
+  }
+
+  
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

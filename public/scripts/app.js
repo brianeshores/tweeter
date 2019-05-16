@@ -55,7 +55,7 @@ const data = [
 function createTweetElement(tweetObj) {
     var $tweetHeader = $("<header>").addClass("tweet-header");
     
-    var $tweetAvatar = $("<img>").addClass("tweet-avatar");
+    var $tweetAvatar = $("<img>").attr("id", "tweet-avatar");
     $tweetAvatar.attr("src", tweetObj["user"].avatars.small);
     
     var $tweetName = $("<p>").addClass("tweet-name");
@@ -71,7 +71,7 @@ function createTweetElement(tweetObj) {
 // define and append footer elements
     var $tweetFooter = $("<footer>").addClass("tweet-footer");
 
-    var $tweetDate = $("<p>").addClass("tweet-date");
+    var $tweetDate = $("<p>").attr("id", "tweet-date");
     $tweetDate.text(tweetObj.created_at);
 
     $tweetFooter.append($tweetDate);
@@ -94,12 +94,40 @@ function createTweetElement(tweetObj) {
 function renderTweets(tweetArr) {
     tweetArr.forEach(function(element){
     var $tweetObj = createTweetElement(element);
-    $(".tweet-container").append($tweetObj);
+    $(".tweet-container").prepend($tweetObj);
     });
 }
 
+
+function loadTweets() {
+  $.getJSON("/tweets", function(data){
+  renderTweets(data);
+  });
+}
+
+
 $(document).ready(function() {
-renderTweets(data);
+    $("#error-message").hide();
+    const $submitTweet = $("#tweet-form");
+  
+    $submitTweet.submit(function (event){
+        event.preventDefault();
+        $("#error-message").hide(200);
+        // console.log("hello: ", $( "#submit-tweet").val().length);
+        if($("#tweet-text").val().length === 0) {
+            $("#error-message").show(200);
+        } else if($("#tweet-text").val().length > 140) {
+          $("#error-message").show(200);
+        } else { 
+          $("#error-message").hide(200);
+          $.ajax("/tweets/", {method: "POST", data: $("#tweet-form").serialize(), success: function(response) {
+          $(".tweet-container").empty();
+          loadTweets();
+          console.log("success"); 
+          }});
+        };
+    });
+    loadTweets();
 });
 
 
