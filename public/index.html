@@ -41,7 +41,8 @@
         <section class="new-tweet">
           <div id=new-tweet-header> 
           <h2>Compose Tweet</h2>
-          <h3 id=error-message>Error: Tweet Empty</h3>
+          <p class="error-message" id="error-empty">Error: Tweet Empty</p>
+          <p class="error-message" id="error-long">Error: Tweet Too Long</p>
           </div>
             <form id="tweet-form" action="/tweets" method="POST">
               <textarea id = "tweet-text" name="text" placeholder="What are you humming about?"></textarea>

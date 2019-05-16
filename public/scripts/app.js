@@ -109,15 +109,15 @@ function loadTweets() {
 $(document).ready(function() {
     $("#error-message").hide();
     const $submitTweet = $("#tweet-form");
-  
     $submitTweet.submit(function (event){
         event.preventDefault();
-        $("#error-message").hide(200);
+        $(".error-message").hide(200);
         // console.log("hello: ", $( "#submit-tweet").val().length);
-        if($("#tweet-text").val().length === 0) {
-            $("#error-message").show(200);
+        if($("#tweet-text").val().length === 0) {  
+          $("#error-empty").show(200);
+            $("#error-em")
         } else if($("#tweet-text").val().length > 140) {
-          $("#error-message").show(200);
+          $("#error-long").show(200);
         } else { 
           $("#error-message").hide(200);
           $.ajax("/tweets/", {method: "POST", data: $("#tweet-form").serialize(), success: function(response) {

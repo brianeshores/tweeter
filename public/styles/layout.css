@@ -33,9 +33,12 @@ body {
   margin-top:1em;
   }
 
-  #error-message {
-    background-color: white;
+  .error-message {
+    background-color: rgb(238, 22, 22);
     text-align: center;
+    color: black;
+    opacity: .75;
+    display: none;
   }
 
   .new-tweet {
@@ -47,6 +50,13 @@ body {
     opacity: 1;
     border: black solid 2px;
   }
+
+  .tweet-body {
+    word-break: break-word;
+    padding: 1em;
+  }
+
+
 
   
 /*
