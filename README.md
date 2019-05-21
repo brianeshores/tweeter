@@ -23,4 +23,4 @@ along with javascript, css and HTML to create this app.
 
 ## Screenshots
 
-!["Screenshot of full app including compose box"](https://github.com/brianeshores/tweeter/blob/master/docs/full-app.png)
+!["Screenshot of full app including compose box"](https://github.com/brianeshores/tweeter/blob/master/docs/Tweeter_full_screen.png)
