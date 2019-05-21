@@ -8,6 +8,8 @@ const bodyParser    = require("body-parser");
 const app           = express();
 const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URL = "mongodb://localhost:27017/tweeter";
+const moment = require('moment');
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -24,12 +26,6 @@ MongoClient.connect(MONGODB_URL, (err, db) =>{
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
   app.use("/tweets", tweetsRoutes);
 
-  // db.collection("tweets").find().toArray((err, results) => {
-  //     if (err) throw err;
-  
-  //     console.log("results array: ", results);
-  //       });
-  // db.close();
 });
 // The `data-helpers` module provides an interface to the database of tweets.
 // This simple interface layer has a big benefit: we could switch out the

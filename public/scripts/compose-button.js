@@ -1,5 +1,5 @@
 $(function(){
     $("#compose-button").click(function(){
-        $(".new-tweet").toggle();
+        $(".new-tweet").slideToggle(600);
     });
 });
